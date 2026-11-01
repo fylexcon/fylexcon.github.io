@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mehmet Selim Suna is a full-stack developer and computer engineering student at İnönü University, building SaaS products, a Solana family vault, quantum portfolio experiments and robotics software." />
+  <meta property="og:title" content="Mehmet Selim Suna, full-stack developer" />
+  <meta property="og:description" content="Full-stack products, a Solana vault, QAOA portfolio selection, in-browser SAR analysis and rover path planning." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0b0f14" />
+  <title>Mehmet Selim Suna</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b0f14'/%3E%3Cpath d='M6 44C14 44 16 14 22 14S28 44 32 44 36 22 42 22 48 44 58 44' stroke='%234fd1c5' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="stage" id="top">
+    <canvas class="wave" id="wave" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+      <a class="brand" href="#top">|selim⟩</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#toolkit">Toolkit</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle colour theme">◐</button>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="ket">|ψ⟩ = α|full-stack⟩ + β|quantum⟩</p>
+      <h1 id="hero-title">Mehmet Selim<br />Suna<span class="cursor" aria-hidden="true"></span></h1>
+      <p class="lede">
+        Full-stack developer and computer engineering student at İnönü University.
+        I ship web and mobile products end to end, and I keep drifting toward the strange
+        edges: a Solana program that guards a family's savings, QAOA for portfolio picks,
+        radar imagery analysed in the browser, robots that look for people under rubble.
+      </p>
+      <p class="actions">
+        <a class="button" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
+        <a href="https://github.com/fylexcon" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/mehmetselimsuna" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:mehmetselimsuna@gmail.com">Email</a>
+      </p>
+    </section>
+
+    <p class="readout" aria-hidden="true">
+      <span id="readout-state">superposition</span>
+      <span id="readout-x"></span>
+    </p>
+    <p class="scene-note">Move your pointer over the wave to measure it.</p>
+  </div>
+
+  <main>
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title"><span class="idx">01</span>Projects</h2>
+
+      <article class="project feature">
+        <div class="project-head">
+          <p class="kicker">Solana · Rust · co-builder</p>
+          <h3><a href="https://github.com/Zer0C00I/Trellis" target="_blank" rel="noopener">Trellis</a></h3>
+          <p class="what">A family USDC vault on Solana, built so an older relative can be helped without anyone holding their keys.</p>
+        </div>
+        <div class="project-body">
+          <p>
+            One Anchor program owns the rules and three interfaces only talk to it: a Next.js dashboard for the
+            vault owner, a Tauri family app for relatives and guardians, and a Slint kiosk on an 800×480 touchscreen
+            where sending money takes three taps.
+          </p>
+          <ul class="rules">
+            <li><strong>Payee list</strong> Only up to ten listed people can be paid.</li>
+            <li><strong>48 h cooldown</strong> A new payee can be paid only two days after being added, unless two guardians sign.</li>
+            <li><strong>Daily limit</strong> Larger sends become requests that a trusted approver releases.</li>
+            <li><strong>Owner rotation</strong> The wallet that owns the vault can be replaced after a waiting period.</li>
+          </ul>
+          <p class="stack">Rust · Anchor · Next.js · Tauri 2 · Slint</p>
+        </div>
+      </article>
+
+      <div class="grid">
+        <article class="project">
+          <p class="kicker">research · qiskit</p>
+          <h3><a href="https://github.com/fylexcon/quantlab" target="_blank" rel="noopener">Quant Quantum Lab</a></h3>
+          <p>Vectorised backtests for SMA-RSI trend strategies with no look-ahead bias and ATR-based slippage, plus QAOA that picks a fixed number of assets for a small portfolio.</p>
+          <p class="stack">Python · Qiskit · pandas · yfinance</p>
+        </article>
+        <article class="project">
+          <p class="kicker">fintech · nlp</p>
+          <h3><a href="https://github.com/fylexcon/quantvantage-ai" target="_blank" rel="noopener">QuantVantage AI</a></h3>
+          <p>An hourly n8n workflow reads financial news, a Gemini agent scores sentiment per ticker from −1 to 1, and a PyTorch model forecasts short-term moves for AAPL, IONQ, BTC, ETH and SOL.</p>
+          <p class="stack">Next.js · FastAPI · PyTorch · Supabase · Expo</p>
+        </article>
+        <article class="project">
+          <p class="kicker">NASA Space Apps · team</p>
+          <h3><a href="https://github.com/fylexcon/NOCTIS-ORBIT" target="_blank" rel="noopener">NOCTIS ORBIT</a></h3>
+          <p>Change detection on Sentinel-1 radar imagery that runs entirely in the browser: Otsu thresholding, morphology and an ONNX model find water, forest, buildings and roads, then export GeoJSON and GeoTIFF.</p>
+          <p class="stack">TypeScript · TensorFlow.js · ONNX · Leaflet</p>
+        </article>
+        <article class="project">
+          <p class="kicker">TUA lunar programme · team</p>
+          <h3><a href="https://github.com/fylexcon/Moon-Rover" target="_blank" rel="noopener">Moon-Rover</a></h3>
+          <p>Procedural lunar terrain with craters and rocks, and a rover that compares A*, Dijkstra and D* Lite over slope and roughness, re-planning when its radar uncovers an obstacle.</p>
+          <p class="stack">Python · Pygame · Perlin noise</p>
+        </article>
+        <article class="project">
+          <p class="kicker">robotics · ROS 2</p>
+          <h3><a href="https://github.com/fylexcon/OpenROV-Base" target="_blank" rel="noopener">OpenROV-Base</a></h3>
+          <p>A ROS 2 Humble stack for underwater vehicles: BNO055 and Bar30 drivers, PID for depth and heading, thruster management over STM32, YOLOv8 vision and leak failsafes, packaged for Jetson Orin Nano.</p>
+          <p class="stack">ROS 2 · Python · Docker · YOLOv8</p>
+        </article>
+        <article class="project">
+          <p class="kicker">search &amp; rescue</p>
+          <h3><a href="https://github.com/fylexcon/ResQSwarm" target="_blank" rel="noopener">ResQSwarm</a></h3>
+          <p>The command panel for a swarm of insect-sized rescue robots: live telemetry over WebSockets and a debris map that flags breathing and heartbeat signals.</p>
+          <p class="stack">FastAPI · WebSocket · React · Vite</p>
+        </article>
+        <article class="project">
+          <p class="kicker">social gaming</p>
+          <h3><a href="https://github.com/fylexcon/FYLEX" target="_blank" rel="noopener">FYLEX</a></h3>
+          <p>A Steam-first social platform with library sync, looking-for-group, real-time chat and deals, in one monorepo that shares its schemas between API and app.</p>
+          <p class="stack">NestJS · Prisma · Postgres · Redis · Expo</p>
+        </article>
+        <article class="project">
+          <p class="kicker">health · ai</p>
+          <h3><a href="https://github.com/fylexcon/gym_bud" target="_blank" rel="noopener">GymBud</a></h3>
+          <p>A fitness coach that reads physique photos and goals, has Gemini write a training and nutrition plan, then adjusts it from daily logs.</p>
+          <p class="stack">Gemini · Supabase · React Native</p>
+        </article>
+      </div>
+
+      <p class="more">More on <a href="https://github.com/fylexcon?tab=repositories" target="_blank" rel="noopener">GitHub</a>: Ask Me More, Feedback Hub, an EEG emotion app and small quantum mechanics simulations.</p>
+    </section>
+
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <h2 id="experience-title"><span class="idx">02</span>Experience</h2>
+      <ol class="timeline">
+        <li>
+          <p class="when">Aug 2025 – now</p>
+          <div>
+            <h3>Software developer, Caladrius</h3>
+            <p>React and TypeScript front ends for AI-driven SaaS products, wired to backend microservices; API contracts refined with the product team.</p>
+          </div>
+        </li>
+        <li>
+          <p class="when">2025 – now</p>
+          <div>
+            <h3>Vice president, IEEE İnönü Student Branch</h3>
+            <p>Coordinates a branch of 100+ members. As Computer Society chair, designed and led Python, data science and machine learning workshops and set up mentoring for competitions.</p>
+          </div>
+        </li>
+        <li>
+          <p class="when">Competitions</p>
+          <div>
+            <h3>NASA Space Apps · Teknofest · TUA</h3>
+            <p>NOCTIS ORBIT for Space Apps, a ROS 2 perception pipeline on Jetson Orin Nano for Teknofest, and Moon-Rover for the Turkish Space Agency's lunar programme.</p>
+          </div>
+        </li>
+        <li>
+          <p class="when">Expected 2028</p>
+          <div>
+            <h3>B.Sc. Computer Engineering, İnönü University</h3>
+            <p>Microsoft AI Innovators Program (2026), Data Analysis Bootcamp (2025–26), IBM Z Day and Techcareer Cloud/DevOps (2025).</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section" id="toolkit" aria-labelledby="toolkit-title">
+      <h2 id="toolkit-title"><span class="idx">03</span>Toolkit</h2>
+      <dl class="toolkit">
+        <div><dt>Languages</dt><dd>TypeScript, Python, Java, C++, Rust, SQL</dd></div>
+        <div><dt>Front end &amp; mobile</dt><dd>React, Next.js, React Native, Expo, Tailwind, Leaflet</dd></div>
+        <div><dt>Back end</dt><dd>FastAPI, NestJS, Fastify, Spring, PostgreSQL, MongoDB, Redis, Supabase</dd></div>
+        <div><dt>AI &amp; data</dt><dd>PyTorch, TensorFlow.js, OpenCV, pandas, Gemini, n8n</dd></div>
+        <div><dt>Systems</dt><dd>Docker, Linux, ROS 2, Jetson Orin Nano, Solana/Anchor</dd></div>
+        <div><dt>Quantum</dt><dd>Qiskit, QAOA, Trotter decomposition</dd></div>
+        <div><dt>Spoken</dt><dd>Turkish (native), English (professional), Spanish and Japanese (elementary)</dd></div>
+      </dl>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title"><span class="idx">04</span>Contact</h2>
+      <div class="contact">
+        <p>Open to internships and collaborations, in Türkiye or abroad.</p>
+        <p class="contact-mail"><a href="mailto:mehmetselimsuna@gmail.com">mehmetselimsuna@gmail.com</a></p>
+        <p class="actions">
+          <a href="https://github.com/fylexcon" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/mehmetselimsuna" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="cv.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Malatya, Türkiye · <a href="#top">back to |0⟩</a></p>
+  </footer>
+
+  <script src="wave.js"></script>
+</body>
+</html>
