@@ -1,3 +1,3 @@
 # fylexcon.github.io
 
-Portfolio of Mehmet Selim Suna. Plain HTML, CSS and one canvas script (`wave.js`), no build step.
+Mehmet Selim Suna's portfolio has moved to [mehmetselimsuna.com](https://mehmetselimsuna.com). This page now redirects there.
